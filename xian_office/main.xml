@@ -56,7 +56,7 @@
 
     <!-- text style for hotspot hovering -->
     <textstyle name="hotspottextstyle"
-               font="Arial" fontsize="18" bold="true" italic="true" textcolor="0xFFF7EF" background="false" border="false"
+               font="Arial" fontsize="18" bold="true" italic="true" textcolor="0x0000FF" background="false" border="false"
                alpha="1" blendmode="layer" effect="glow(0x000000,0.5,4,3);dropshadow(4,45,0x000000,4,0.66);"
                origin="cursor" edge="bottom" textalign="center" xoffset="0" yoffset="-3" noclip="true" showtime="0.1" fadetime="0.25" fadeintime="0.1"
             />
@@ -65,7 +65,7 @@
     <scene name="scene_kellerstueberl" title="kellerstueberl" onstart="" thumburl="image_tails/hall_tails/front.jpg">
         <plugin name="gyro" devices="html5" url="plugins/gyro.js" enabled="true" camroll="true" friction="0" velastic="0" onavailable="set(layer[gyrobutton].visible,true); set(layer[infotext].html,'Gyroscope available, press the gyro button to activate...');" onloaded="delayedcall(1,ifnot(available, showgyrowarning() ));"/>
         <view hlookat="50" vlookat="25" fovtype="MFOV" fov="100" maxpixelzoom="2.0" fovmin="60" fovmax="120" />
-        <preview url="kellerstueberl.tiles/preview.jpg" />
+        <preview url="image_tails/hall_tails/front.jpg" />
 
         <image>
             <left  url="image_tails/hall_tails/left.jpg" />
@@ -75,51 +75,38 @@
             <up    url="image_tails/hall_tails/up.jpg" />
             <down  url="image_tails/hall_tails/down.jpg" />
             <mobile>
-                <left  url="kellerstueberl.tiles/mobile_l.jpg" />
-                <front url="kellerstueberl.tiles/mobile_f.jpg" />
-                <right url="kellerstueberl.tiles/mobile_r.jpg" />
-                <back  url="kellerstueberl.tiles/mobile_b.jpg" />
-                <up    url="kellerstueberl.tiles/mobile_u.jpg" />
-                <down  url="kellerstueberl.tiles/mobile_d.jpg" />
+                <left  url="image_tails/hall_tails/left.jpg" />
+                <front url="image_tails/hall_tails/front.jpg" />
+                <right url="image_tails/hall_tails/right.jpg" />
+                <back  url="image_tails/hall_tails/back.jpg" />
+                <up    url="image_tails/hall_tails/up.jpg" />
+                <down  url="image_tails/hall_tails/down.jpg" />
             </mobile>
             <tablet>
-                <left  url="kellerstueberl.tiles/tablet_l.jpg" />
-                <front url="kellerstueberl.tiles/tablet_f.jpg" />
-                <right url="kellerstueberl.tiles/tablet_r.jpg" />
-                <back  url="kellerstueberl.tiles/tablet_b.jpg" />
-                <up    url="kellerstueberl.tiles/tablet_u.jpg" />
-                <down  url="kellerstueberl.tiles/tablet_d.jpg" />
+                <left  url="image_tails/hall_tails/left.jpg" />
+                <front url="image_tails/hall_tails/front.jpg" />
+                <right url="image_tails/hall_tails/right.jpg" />
+                <back  url="image_tails/hall_tails/back.jpg" />
+                <up    url="image_tails/hall_tails/up.jpg" />
+                <down  url="image_tails/hall_tails/down.jpg" />
             </tablet>
         </image>
 
-        <!-- opened door distorted image hotspot (Flash only) -->
-        <hotspot name="door"
-                 devices="flash"
-                 url="graphics/kellerstueberl_dooropen.jpg"
-                 distorted="true"
-                 visible="false"
-                 enabled="false"
-                 ath="0"
-                 atv="0"
-                 width="318.181818"
-                 height="590.909090"
-                 edge="lefttop"
-                 ox="-91.818181"
-                 oy="-167.272727"
-                 alpha="0.0"
+        <style name="pichotspot"
+               capture="false"
+               zorder="1"
+               alturl="hotspots/arrow_left.png"
+               altonloaded="if(isphone, set(scale,1.7));"
+               zoom="true"
+               scale="1.5"
                 />
 
-        <!-- invisible polygonal hotsppot as 'hit area' for the door hotspot
-            (for HTML5 an animated gif is used as alternative) -->
-        <hotspot name="door_hitarea"
-                 style="alt_hotspot_ani_white"
-                 ath="11"
-                 atv="6"
-                 alpha="0"
+        <hotspot name="hs1" pic="meisterbrief" ath="-18" atv="10"
+                 style="pichotspot"
                  capture="false"
                  onover="set(hotspot[door].visible,true); tween(hotspot[door].alpha,1,0.4);"
                  onout="if(enabled, tween(hotspot[door].alpha,0.0,0.4,default,set(hotspot[door].visible,false)) );"
-                 onhover="showtext('Vorraum',hotspottextstyle);"
+                 onhover="showtext('Meeting Room',hotspottextstyle);"
                  onclick="set(enabled,false);
 			              set(view.maxpixelzoom,null);
 			              set(view.fovmin,28);
@@ -130,73 +117,20 @@
 			              oninterrupt(break);
 			              wait(BLEND);
 			              lookto(-352.7, -1.6, 108, smooth(45,45,60), false);
-			             "
-                >
-            <point ath="  0.2451" atv="-13.0911" />
-            <point ath="  9.5232" atv="-12.6311" />
-            <point ath=" 18.9875" atv="-12.5328" />
-            <point ath=" 19.5338" atv=" 10.7739" />
-            <point ath=" 15.7329" atv=" 11.3926" />
-            <point ath=" 15.6678" atv=" 25.4866" />
-            <point ath="  8.4078" atv=" 25.7356" />
-            <point ath="  8.4083" atv=" 27.0813" />
-            <point ath="  2.7864" atv=" 26.7555" />
-            <point ath="  1.7124" atv=" 27.8670" />
-            <point ath=" -0.9187" atv=" 27.0069" />
-            <point ath=" -1.4939" atv=" 11.6458" />
-            <point ath=" -0.6737" atv=" -5.2171" />
+			             ">
+            <point ath="-23" atv="-5" />
+            <point ath="-20" atv="-4" />
+            <point ath="-20" atv="16" />
+            <point ath="-23" atv="20" />
         </hotspot>
-
-
-        <!-- polygonal hotspots for the pictures on the wall
-            (for a HTML5 a zoomicon is used as alternative) -->
-        <style name="pichotspot"
-               capture="false"
-               zorder="1"
-               onclick="showpic();"
-               alturl="hotspots/zoomicon.png"
-               altonloaded="if(isphone, set(scale,0.7));"
-               zoom="true"
-               scale="0.5"
-                />
-
-        <hotspot name="hs1" style="pichotspot" pic="meisterbrief" ath="-32.5" atv="-4.5">
-            <point ath="-40.4898" atv="-23.0243" />
-            <point ath="-40.6431" atv=" -5.5848" />
-            <point ath="-33.4257" atv=" -4.7608" />
-            <point ath="-33.1506" atv="-20.0256" />
-        </hotspot>
-
-        <hotspot name="hs2" style="pichotspot" pic="bildgruen" ath="46.5" atv="3">
-            <point ath=" 35.5409" atv=" -4.8241" />
-            <point ath=" 35.6940" atv="  3.7081" />
-            <point ath=" 46.0841" atv="  3.0648" />
-            <point ath=" 45.9859" atv=" -4.4321" />
-        </hotspot>
-
-        <hotspot name="hs3" style="pichotspot" pic="bildrot" ath="84.5" atv="3">
-            <point ath=" 75.8092" atv=" -8.8103" />
-            <point ath=" 75.6990" atv="  2.4090" />
-            <point ath=" 84.3261" atv="  2.6917" />
-            <point ath=" 84.3253" atv=" -9.0785" />
-        </hotspot>
-
-        <hotspot name="hs4" style="pichotspot" pic="bildlandschaft" ath="121.5" atv="-2">
-            <point ath="113.4572" atv=" -7.9561" />
-            <point ath="113.5170" atv=" -2.1261" />
-            <point ath="121.4668" atv=" -2.6612" />
-            <point ath="121.2671" atv="-10.8025" />
-        </hotspot>
-
     </scene>
 
-
-
-    <scene name="scene_vorraum" title="vorraum" onstart="" thumburl="vorraum.tiles/thumb.jpg">
+    <scene name="scene_vorraum" title="vorraum" onstart="" thumburl="image_tails/hall_tails/front.jpg">
+        <plugin name="gyro" devices="html5" url="plugins/gyro.js" enabled="true" camroll="true" friction="0" velastic="0" onavailable="set(layer[gyrobutton].visible,true); set(layer[infotext].html,'Gyroscope available, press the gyro button to activate...');" onloaded="delayedcall(1,ifnot(available, showgyrowarning() ));"/>
 
         <view hlookat="-47" vlookat="13" fovtype="MFOV" fov="100" maxpixelzoom="2.0" fovmin="60" fovmax="120" />
 
-        <preview url="vorraum.tiles/preview.jpg" />
+        <preview url="image_tails/hall_tails/front.jpg" />
 
         <image>
             <left  url="vorraum.tiles/pano_l.jpg" />
@@ -350,9 +284,6 @@
         );
     </action>
 
-
-
-
     <!-- thumbnail actions begin (remove the 'buildthumbs()' call in the onstart event to remove the thumbs) -->
     <action name="buildthumbs">
         if(%1 != NEXT, set(i,0));
@@ -441,6 +372,4 @@
         );
     </action>
     <!-- thumbnail actions end -->
-
-
 </krpano>
