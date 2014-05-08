@@ -62,39 +62,42 @@
             />
 
 
-    <scene name="scene_kellerstueberl" title="kellerstueberl" onstart="" thumburl="image_tails/hall_tails/front.jpg">
+    <scene name="scene_kellerstueberl" title="kellerstueberl" onstart="" thumburl="image_tiles/hall_tiles/left.jpg">
         <plugin name="gyro" devices="html5" url="plugins/gyro.js" enabled="true" camroll="true" friction="0" velastic="0" onavailable="set(layer[gyrobutton].visible,true); set(layer[infotext].html,'Gyroscope available, press the gyro button to activate...');" onloaded="delayedcall(1,ifnot(available, showgyrowarning() ));"/>
         <view hlookat="50" vlookat="25" fovtype="MFOV" fov="100" maxpixelzoom="2.0" fovmin="60" fovmax="120" />
-        <preview url="image_tails/hall_tails/front.jpg" />
+        <preview url="image_tiles/hall_tiles/left.jpg" />
 
         <image>
-            <left  url="image_tails/hall_tails/left.jpg" />
-            <front url="image_tails/hall_tails/front.jpg" />
-            <right url="image_tails/hall_tails/right.jpg" />
-            <back  url="image_tails/hall_tails/back.jpg" />
-            <up    url="image_tails/hall_tails/up.jpg" />
-            <down  url="image_tails/hall_tails/down.jpg" />
+            <left  url="image_tiles/hall_tiles/left.jpg" />
+            <front url="image_tiles/hall_tiles/front.jpg" />
+            <right url="image_tiles/hall_tiles/right.jpg" />
+            <back  url="image_tiles/hall_tiles/back.jpg" />
+            <up    url="image_tiles/hall_tiles/up.jpg" />
+            <down  url="image_tiles/hall_tiles/down.jpg" />
             <mobile>
-                <left  url="image_tails/hall_tails/left.jpg" />
-                <front url="image_tails/hall_tails/front.jpg" />
-                <right url="image_tails/hall_tails/right.jpg" />
-                <back  url="image_tails/hall_tails/back.jpg" />
-                <up    url="image_tails/hall_tails/up.jpg" />
-                <down  url="image_tails/hall_tails/down.jpg" />
+                <left  url="image_tiles/hall_tiles/left.jpg" />
+                <front url="image_tiles/hall_tiles/front.jpg" />
+                <right url="image_tiles/hall_tiles/right.jpg" />
+                <back  url="image_tiles/hall_tiles/back.jpg" />
+                <up    url="image_tiles/hall_tiles/up.jpg" />
+                <down  url="image_tiles/hall_tiles/down.jpg" />
             </mobile>
             <tablet>
-                <left  url="image_tails/hall_tails/left.jpg" />
-                <front url="image_tails/hall_tails/front.jpg" />
-                <right url="image_tails/hall_tails/right.jpg" />
-                <back  url="image_tails/hall_tails/back.jpg" />
-                <up    url="image_tails/hall_tails/up.jpg" />
-                <down  url="image_tails/hall_tails/down.jpg" />
+                <left  url="image_tiles/hall_tiles/left.jpg" />
+                <front url="image_tiles/hall_tiles/front.jpg" />
+                <right url="image_tiles/hall_tiles/right.jpg" />
+                <back  url="image_tiles/hall_tiles/back.jpg" />
+                <up    url="image_tiles/hall_tiles/up.jpg" />
+                <down  url="image_tiles/hall_tiles/down.jpg" />
             </tablet>
         </image>
 
+        <!-- polygonal hotspots for the pictures on the wall
+            (for a HTML5 a zoomicon is used as alternative) -->
         <style name="pichotspot"
                capture="false"
                zorder="1"
+               onclick="showpic();"
                alturl="hotspots/arrow_left.png"
                altonloaded="if(isphone, set(scale,1.7));"
                zoom="true"
@@ -108,16 +111,16 @@
                  onout="if(enabled, tween(hotspot[door].alpha,0.0,0.4,default,set(hotspot[door].visible,false)) );"
                  onhover="showtext('Meeting Room',hotspottextstyle);"
                  onclick="set(enabled,false);
-			              set(view.maxpixelzoom,null);
-			              set(view.fovmin,28);
-			              lookto(10.7, 3.5, 42);
-			              loadscene(scene_vorraum, null, MERGE, BLEND(2));
-			              lookat(-94, 19, 97);
-			              wait(LOAD);
-			              oninterrupt(break);
-			              wait(BLEND);
-			              lookto(-352.7, -1.6, 108, smooth(45,45,60), false);
-			             ">
+                    set(view.maxpixelzoom,null);
+                    set(view.fovmin,28);
+                    lookto(10.7, 3.5, 42);
+                    loadscene(scene_meeting_room, null, MERGE, BLEND(2));
+                    lookat(-94, 19, 97);
+                    wait(LOAD);
+                    oninterrupt(break);
+                    wait(BLEND);
+                    lookto(-352.7, -1.6, 108, smooth(45,45,60), false);
+                   ">
             <point ath="-23" atv="-5" />
             <point ath="-20" atv="-4" />
             <point ath="-20" atv="16" />
@@ -125,95 +128,6 @@
         </hotspot>
     </scene>
 
-    <scene name="scene_vorraum" title="vorraum" onstart="" thumburl="image_tails/hall_tails/front.jpg">
-        <plugin name="gyro" devices="html5" url="plugins/gyro.js" enabled="true" camroll="true" friction="0" velastic="0" onavailable="set(layer[gyrobutton].visible,true); set(layer[infotext].html,'Gyroscope available, press the gyro button to activate...');" onloaded="delayedcall(1,ifnot(available, showgyrowarning() ));"/>
-
-        <view hlookat="-47" vlookat="13" fovtype="MFOV" fov="100" maxpixelzoom="2.0" fovmin="60" fovmax="120" />
-
-        <preview url="image_tails/hall_tails/front.jpg" />
-
-        <image>
-            <left  url="vorraum.tiles/pano_l.jpg" />
-            <front url="vorraum.tiles/pano_f.jpg" />
-            <right url="vorraum.tiles/pano_r.jpg" />
-            <back  url="vorraum.tiles/pano_b.jpg" />
-            <up    url="vorraum.tiles/pano_u.jpg" />
-            <down  url="vorraum.tiles/pano_d.jpg" />
-            <mobile>
-                <left  url="vorraum.tiles/mobile_l.jpg" />
-                <front url="vorraum.tiles/mobile_f.jpg" />
-                <right url="vorraum.tiles/mobile_r.jpg" />
-                <back  url="vorraum.tiles/mobile_b.jpg" />
-                <up    url="vorraum.tiles/mobile_u.jpg" />
-                <down  url="vorraum.tiles/mobile_d.jpg" />
-            </mobile>
-            <tablet>
-                <left  url="vorraum.tiles/tablet_l.jpg" />
-                <front url="vorraum.tiles/tablet_f.jpg" />
-                <right url="vorraum.tiles/tablet_r.jpg" />
-                <back  url="vorraum.tiles/tablet_b.jpg" />
-                <up    url="vorraum.tiles/tablet_u.jpg" />
-                <down  url="vorraum.tiles/tablet_d.jpg" />
-            </tablet>
-        </image>
-
-        <hotspot name="kellerstueberl"
-                 style="alt_hotspot_ani_white"
-                 ath="46.2"
-                 atv="13.9"
-                 alpha="0"
-                 capture="false"
-                 onhover="showtext('Kellerstüberl',hotspottextstyle);"
-                 onclick="set(view.maxpixelzoom,null);
-		                  set(view.fovmin,28);
-		                  looktohotspot(get(name),42);
-		                  loadscene(scene_kellerstueberl, null, MERGE, BLEND(2));
-		                  lookat(9.5, 7.9, 45);
-		                  wait(LOAD);
-			              oninterrupt(break);
-			              wait(BLEND);
-			              lookto(50, 25, 100, smooth(45,45,60));
-			             "
-                >
-            <point ath=" 45.7058" atv="-26.1906" />
-            <point ath=" 40.2116" atv="-10.1630" />
-            <point ath=" 33.4871" atv="  6.7408" />
-            <point ath=" 29.7230" atv=" 14.7433" />
-            <point ath=" 32.1818" atv=" 23.7997" />
-            <point ath=" 34.5828" atv=" 41.3338" />
-            <point ath=" 34.6037" atv=" 43.5191" />
-            <point ath=" 61.6951" atv=" 50.3994" />
-            <point ath=" 63.6808" atv=" 20.4884" />
-            <point ath=" 64.8881" atv=" 17.9660" />
-            <point ath=" 61.0023" atv=" 12.2691" />
-            <point ath=" 50.8736" atv="-12.9786" />
-        </hotspot>
-
-        <hotspot name="keller"
-                 style="alt_hotspot_ani_white"
-                 ath="130.5"
-                 atv="10.4"
-                 alpha="0"
-                 capture="false"
-                 onhover="showtext('Keller',hotspottextstyle);"
-                 onclick="set(view.maxpixelzoom,null);
-		                  set(view.fovmin,28);
-		                  looktohotspot(get(name),42);
-		                  loadscene(scene_keller, null, MERGE, BLEND(2));
-		                  lookat(193, 2, 45);
-			              wait(LOAD);
-			              oninterrupt(break);
-			              wait(BLEND);
-			              lookto(331, 7, 108, smooth(45,45,60), false);
-		                 "
-                >
-            <point ath="127.3806" atv=" 40.8125" />
-            <point ath="172.8342" atv=" 43.1718" />
-            <point ath="172.6533" atv="-30.7950" />
-            <point ath="127.6526" atv="-29.0440" />
-        </hotspot>
-
-    </scene>
 
     <!-- actions -->
 
@@ -283,6 +197,9 @@
         flyin(get(pic));
         );
     </action>
+
+
+
 
     <!-- thumbnail actions begin (remove the 'buildthumbs()' call in the onstart event to remove the thumbs) -->
     <action name="buildthumbs">
@@ -372,4 +289,6 @@
         );
     </action>
     <!-- thumbnail actions end -->
+
+
 </krpano>
