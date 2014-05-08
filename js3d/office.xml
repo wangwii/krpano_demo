@@ -1,0 +1,49 @@
+<krpano version="1.0.8"  onstart="loadscene(0);">
+
+	<include url="global.xml" /> 
+	<view hlookat="-70" vlookat="0" fov="100" fovmin="50" fovmax="128" /> 
+  
+	<progress showload="none" showwait="none"/>
+	
+	<!--**********************************************************-->
+	<!-- the scenes 111111111111111111111111111111111111111111111111111111111111111111111111-->
+	<!--**********************************************************-->
+	<scene name="scene1" title="Scene 1">
+		<view hlookat="0" vlookat="10" fov="110" fovmin="50" fovmax="128" /> 
+		<plugin name="gyro" devices="html5" url="/js3d/plugins/gyro.js" enabled="true" camroll="true" friction="0" velastic="0" onavailable="set(layer[gyrobutton].visible,true); set(layer[infotext].html,'Gyroscope available, press the gyro button to activate...');" onloaded="delayedcall(1,ifnot(available, showgyrowarning() ));"/>
+		<events onxmlcomplete="showgyrowarning();" devices="flash"/>
+		<action name="showgyrowarning">
+			set(layer[infotext].html,'Gyroscope NOT available...'))
+		</action>
+	
+		<!--<preview type="CUBESTRIP" url="../img/1/b1.tiles/preview.jpg" />-->
+		<image type="CUBE" multires="true" tilesize="764" progressive="false">
+			<level tiledimagewidth="1528" tiledimageheight="1528">
+				<left  url="/js3d/image/pano_l.jpg" />
+				<front url="/js3d/image/pano_f.jpg" />
+				<right url="/js3d/image/pano_r.jpg" />
+				<back  url="/js3d/image/pano_b.jpg" />
+				<up    url="/js3d/image/pano_u.jpg" />
+				<down  url="/js3d/image/pano_d.jpg" />
+			</level>
+			
+			<level tiledimagewidth="764" tiledimageheight="764">
+                <left  url="/js3d/image/tablet_l.jpg" />
+                <front url="/js3d/image/tablet_f.jpg" />
+                <right url="/js3d/image/tablet_r.jpg" />
+                <back  url="/js3d/image/tablet_b.jpg" />
+                <up    url="/js3d/image/tablet_u.jpg" />
+                <down  url="/js3d/image/tablet_d.jpg" />
+			</level>
+		</image>
+
+		<!--<hotspot name="spot1" style="hotspotstyle" url="../../images/arrow_r.png" ath="35" alpha="0.9" atv="175" scale="1.6" zoom="false" width="120" height="120" onclick="tween(ox,100,0.5); tween(alpha,0,0.5);looktohotspot(spot1);loadscene(scene2, null, MERGE, BLEND(1));" />-->
+		<!---->
+		<!--<hotspot name="spot2" style="hotspotstyle" url="../../images/arrow.png" ath="85" alpha="0.9" atv="155" scale="1.6" zoom="false" width="120" height="120" onclick="tween(oy,-100,0.5); tween(alpha,0,0.5);looktohotspot(spot2);loadscene(scene5, null, MERGE, BLEND(1));" />-->
+		<!---->
+		<!--<hotspot name="spot3" style="hotspotstyle" url="../../images/arrow_l.png" ath="-80" alpha="0.9" atv="155" scale="1.6" zoom="false" width="120" height="120" onclick="tween(ox,-150,0.5); tween(alpha,0,0.5);looktohotspot(spot3);loadscene(scene3, null, MERGE, BLEND(1));" />-->
+		<!---->
+		<!--<hotspot name="spot4" style="hotspotstyle" url="../../images/arrow_r.png" ath="-65" alpha="0.9" atv="185" scale="1.6" zoom="false" width="120" height="120" onclick="tween(ox,150,0.5); tween(alpha,0,0.5);looktohotspot(spot4);loadscene(scene4, null, MERGE, BLEND(1));" />-->
+	</scene>
+	
+</krpano>

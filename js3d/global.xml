@@ -1,0 +1,68 @@
+<!--  global settings for all krpano.com example panoramas  -->
+<krpano>
+    <!--  global.xml events -->
+    <events name="globalxml" keep="true" devices="desktop" onxmlcomplete="setuppano();" onenterfullscreen="set(plugin[openfs].visible,false); set(plugin[closefs].visible,true);" onexitfullscreen="set(plugin[openfs].visible,true); set(plugin[closefs].visible,false);" onkeyup="if(keycode == 32, showui());" />
+    <events onxmlcomplete="action(qtvrcursor);action(autorotateright);" />
+
+    <!--  krpano logo -->
+
+
+
+
+
+    <!--  option plugin  -->
+    <!--  <plugin name="options" url="plugins/options.swf" keep="true" devices="flash" /> -->
+    <!--  textstyles -->
+
+    <!--  right-click context menu to change the viewing settings  -->
+    <contextmenu fullscreen="false">
+        <item caption="00ok [ 地产 + 网络 + 互动 + 营销 ] www.00ok.cc" onclick="openurl(http://www.00ok.cc/);" />
+        <item caption="FULLSCREEN" separator="true" />
+        <item caption="普通视图" onclick="action(view_normal);" separator="true" />
+        <item caption="鱼眼视图" onclick="action(view_fisheye);" />
+        <item caption="建筑视图" onclick="action(view_architectural);" />
+        <item caption="立体视图" onclick="action(view_stereographic);" />
+        <item caption="pannini视图" onclick="action(view_pannini);" />
+        <item caption="小行星视图" onclick="action(view_littleplanet);" />
+        <item caption="KRPANO" separator="true" />
+    </contextmenu>
+    <!--  actions to change the mouse cursor -->
+    <action name="dragcursor">set(plugin[dragmode].visible, false); set(plugin[movemode].visible, true); set(control.mousetype, drag2D); set(cursors.url, %SWFPATH%/skin/drag-cursors.png); set(cursors.type, drag); set(cursors.move, 2|0|30|32); set(cursors.drag, 37|0|30|32);</action>
+    <action name="qtvrcursor">set(plugin[dragmode].visible, true); set(plugin[movemode].visible, false); set(control.mousetype, moveto); set(cursors.url, %SWFPATH%/skin/qtvr-cursors.png); set(cursors.type, 8way); set(cursors.move, 0|0|16|16); set(cursors.drag, 16|0|16|16); set(cursors.arrow_u, 32|0|16|16); set(cursors.arrow_d, 48|0|16|16); set(cursors.arrow_l, 64|0|16|16); set(cursors.arrow_r, 80|0|16|16); set(cursors.arrow_lu, 96|0|16|16); set(cursors.arrow_ru, 112|0|16|16); set(cursors.arrow_rd, 128|0|16|16); set(cursors.arrow_ld, 144|0|16|16);</action>
+    <!--  actions for view changing -->
+    <action name="view_normal">tween(view.fovmax, 150.0, distance(179, 1.00), easeoutquad); tween(view.architectural, 0.0, distance(1.0, 0.45), easeoutquad); tween(view.fisheye, 0.0, distance(1.0, 0.45), easeoutquad, set(view.stereographic,false); set(view.pannini,false); set(display.flash10,on); );</action>
+    <action name="view_fisheye">set(display.flash10,off); tween(view.architectural, 0.0, distance(1.0, 0.30), easeoutquad); tween(view.fisheye, 0.0 ,distance(1.0, 0.30), easeoutquad, set(view.stereographic,false); set(view.pannini,false); set(view.fovmax,179); tween(view.fisheye, 0.35, distance(1.0,1.25)); );</action>
+    <action name="view_architectural">tween(view.fovmax, 150.0, distance(179, 1.00), easeoutquad); tween(view.architectural, 1.0, distance(1.0, 0.45), easeoutquad); tween(view.fisheye, 0.0, distance(1.0, 0.45), easeoutquad, set(view.stereographic,false);set(view.pannini,false);set(display.flash10,on); );</action>
+    <action name="view_stereographic">set(display.flash10,off); tween(view.architectural, 0.0, 0.25); set(backtonormalfirst,false); if(view.pannini == true, set(backtonormalfirst,true) ); if(view.stereographic == false, set(backtonormalfirst,true) ); if(backtonormalfirst, tween(view.fisheye, 0.0 ,distance(1.0, 0.25), easeoutquad, WAIT); ); set(view.pannini, false); set(view.stereographic, true); set(view.fovmax, 150); tween(view.fisheye, 1.0, distance(1.0, 0.75), easeoutquad);</action>
+    <action name="view_pannini">set(display.flash10,off); tween(view.architectural, 0.0, 0.25); set(backtonormalfirst,false); if(view.pannini == false, set(backtonormalfirst,true) ); if(view.stereographic == false, set(backtonormalfirst,true) ); if(backtonormalfirst, tween(view.fisheye, 0.0 ,distance(1.0, 0.25), easeoutquad, WAIT); ); set(view.pannini, true); set(view.stereographic, true); set(view.fovmax, 150); tween(view.fisheye, 1.0, distance(1.0, 0.75), easeoutquad);</action>
+    <action name="view_littleplanet">set(display.flash10,off); tween(view.architectural, 0.0, 0.25); tween(view.vlookat, 90, distance(179, 1.50), easeoutquad); set(backtonormalfirst,false); if(view.pannini == true, set(backtonormalfirst,true) ); if(view.stereographic == false, set(backtonormalfirst,true) ); if(backtonormalfirst, tween(view.fisheye, 0.0 ,distance(1.0, 0.25), easeoutquad, WAIT); ); set(view.pannini, false); set(view.stereographic, true); set(view.fovmax, 150); tween(view.fisheye, 1.0, distance(1.0, 0.75), easeoutquad); tween(view.fov, 150, distance(179, 0.75), easeoutquad);</action>
+    <!--  setup pano, will be called on the onxmlcomplete event
+     -->
+    <action name="setuppano">
+        <!--  set qtvr cursor
+         -->
+        action(qtvrcursor);
+        <!--  disable flash10 for spherical panos and when using the fisheye distortion
+         -->
+        ifnot(keepflash10setup, if(image.type == SPHERE, set(display.flash10,off) ); if(view.fisheye GT 0.0, set(display.flash10,off) ); );
+        <!--  hide the other view settings in the context menu on partial panos
+         -->
+        if(ispartialpano === true, set(showviewitems,false), set(showviewitems,true)); set(contextmenu.item[2].visible, get(showviewitems)); set(contextmenu.item[3].visible, get(showviewitems)); set(contextmenu.item[4].visible, get(showviewitems)); set(contextmenu.item[5].visible, get(showviewitems)); set(contextmenu.item[6].visible, get(showviewitems)); set(contextmenu.item[7].visible, get(showviewitems));
+    </action>
+    <action name="autorotateright">
+        action(autorotatepause);
+        set(autorotate.speed,+3);
+        set(autorotate.accel,7);
+        set(autorotate.enabled,true);
+        set(plugin[cbplayright].visible,false);
+        set(plugin[cbplayright2].visible,true);
+    </action>
+    <action name="autorotatepause">
+        set(autorotate.speed,0);
+        set(autorotate.enabled,false);
+        set(plugin[cbplayleft].visible,true);
+        set(plugin[cbplayleft2].visible,false);
+        set(plugin[cbplayright].visible,true);
+        set(plugin[cbplayright2].visible,false);
+    </action>
+</krpano>
