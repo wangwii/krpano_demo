@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>myfun.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <style>
+        @-ms-viewport { width: device-width; }
+        @media only screen and (min-device-width: 800px) { html { overflow:hidden; } }
+        html { height:100%; width:100%;}
+        body { width:100%; height:100%; overflow:hidden; margin:0; padding:0;}
+    </style>
+
+    <script type="text/javascript">
+        if(navigator.platform.indexOf('Win32')!=-1 || navigator.platform.indexOf('Win64')!=-1 || navigator.platform.indexOf('Mac')!=-1){
+            document.write("<script language=\"javascript\" src=\"swfkrpano_pc.js\" ><\/script>");//pc
+        }else{
+            document.write("<script language=\"javascript\" src=\"swfkrpano.js\" ><\/script>");//mobile
+        }
+    </script>
+</head>
+<body>
+<div id="pano" style="width:100%;height:100%;">
+    <noscript>ERROR: Javascript not activated</noscript>
+    <script>
+        embedpano({swf:"krpano.swf", xml:'main.xml', target:"pano", html5:"auto"});
+    </script>
+</div>
+</body>
+</html>
