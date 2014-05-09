@@ -75,14 +75,19 @@
             <up    url="kellerstueberl.tiles/pano_u.jpg" />
             <down  url="kellerstueberl.tiles/pano_d.jpg" />
             <mobile>
-                <left  url="kellerstueberl.tiles/pano_l.jpg" />
-                <front url="kellerstueberl.tiles/pano_f.jpg" />
-                <right url="kellerstueberl.tiles/pano_r.jpg" />
-                <back  url="kellerstueberl.tiles/pano_b.jpg" />
-                <up    url="kellerstueberl.tiles/pano_u.jpg" />
-                <down  url="kellerstueberl.tiles/pano_d.jpg" />
+                <left  url="kellerstueberl.tiles/mobile_l.jpg" />
+                <front url="kellerstueberl.tiles/mobile_f.jpg" />
+                <right url="kellerstueberl.tiles/mobile_r.jpg" />
+                <back  url="kellerstueberl.tiles/mobile_b.jpg" />
+                <up    url="kellerstueberl.tiles/mobile_u.jpg" />
+                <down  url="kellerstueberl.tiles/mobile_d.jpg" />
             </mobile>
             <tablet>
+                <left  url="kellerstueberl.tiles/tablet_l.jpg" />
+                <front url="kellerstueberl.tiles/tablet_f.jpg" />
+                <right url="kellerstueberl.tiles/tablet_r.jpg" />
+                <back  url="kellerstueberl.tiles/tablet_b.jpg" />
+                <up    url="kellerstueberl.tiles/tablet_u.jpg" />
                 <down  url="kellerstueberl.tiles/tablet_d.jpg" />
             </tablet>
         </image>
@@ -188,7 +193,6 @@
 
 
     <scene name="scene_vorraum" title="vorraum" onstart="" thumburl="vorraum.tiles/thumb.jpg">
-        <plugin name="gyro" devices="html5" url="plugins/gyro.js" enabled="true" camroll="true" friction="0" velastic="0" onavailable="set(layer[gyrobutton].visible,true); set(layer[infotext].html,'Gyroscope available, press the gyro button to activate...');" onloaded="delayedcall(1,ifnot(available, showgyrowarning() ));"/>
 
         <view hlookat="-47" vlookat="13" fovtype="MFOV" fov="100" maxpixelzoom="2.0" fovmin="60" fovmax="120" />
 
@@ -279,7 +283,6 @@
 
 
     <scene name="scene_keller" title="keller" onstart="" thumburl="keller.tiles/thumb.jpg">
-        <plugin name="gyro" devices="html5" url="plugins/gyro.js" enabled="true" camroll="true" friction="0" velastic="0" onavailable="set(layer[gyrobutton].visible,true); set(layer[infotext].html,'Gyroscope available, press the gyro button to activate...');" onloaded="delayedcall(1,ifnot(available, showgyrowarning() ));"/>
 
         <view hlookat="331" vlookat="7" fovtype="MFOV" fov="108" maxpixelzoom="2.0" fovmin="60" fovmax="120" />
 
@@ -346,7 +349,6 @@
 
 
     <scene name="scene_skeller" title="skeller" onstart="" thumburl="skeller.tiles/thumb.jpg">
-        <plugin name="gyro" devices="html5" url="plugins/gyro.js" enabled="true" camroll="true" friction="0" velastic="0" onavailable="set(layer[gyrobutton].visible,true); set(layer[infotext].html,'Gyroscope available, press the gyro button to activate...');" onloaded="delayedcall(1,ifnot(available, showgyrowarning() ));"/>
 
         <view hlookat="62" vlookat="0" fovtype="MFOV" fov="99" maxpixelzoom="2.0" fovmin="60" fovmax="120" />
 
@@ -417,7 +419,6 @@
 
 
     <scene name="scene_weingarten" title="weingarten" onstart="" thumburl="weingarten.tiles/thumb.jpg">
-        <plugin name="gyro" devices="html5" url="plugins/gyro.js" enabled="true" camroll="true" friction="0" velastic="0" onavailable="set(layer[gyrobutton].visible,true); set(layer[infotext].html,'Gyroscope available, press the gyro button to activate...');" onloaded="delayedcall(1,ifnot(available, showgyrowarning() ));"/>
 
         <view hlookat="-14" vlookat="1" fovtype="MFOV" fov="85" maxpixelzoom="2.0" fovmin="60" fovmax="120" />
 
