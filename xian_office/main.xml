@@ -62,9 +62,9 @@
             />
 
 
-    <scene name="scene_kellerstueberl" title="kellerstueberl" onstart="" thumburl="image_tiles/hall_tiles/left.jpg">
+    <scene name="scene_hall" title="xian_office" onstart="" thumburl="image_tiles/hall_tiles/left.jpg">
         <plugin name="gyro" devices="html5" url="plugins/gyro.js" enabled="true" camroll="true" friction="0" velastic="0" onavailable="set(layer[gyrobutton].visible,true); set(layer[infotext].html,'Gyroscope available, press the gyro button to activate...');" onloaded="delayedcall(1,ifnot(available, showgyrowarning() ));"/>
-        <view hlookat="50" vlookat="25" fovtype="MFOV" fov="100" maxpixelzoom="2.0" fovmin="60" fovmax="120" />
+        <view hlookat="80" vlookat="10" fovtype="MFOV" fov="100" maxpixelzoom="2.0" fovmin="60" fovmax="120" />
         <preview url="image_tiles/hall_tiles/left.jpg" />
 
         <image>
@@ -97,7 +97,6 @@
         <style name="pichotspot"
                capture="false"
                zorder="1"
-               onclick="showpic();"
                alturl="hotspots/arrow_left.png"
                altonloaded="if(isphone, set(scale,1.7));"
                zoom="true"
@@ -113,9 +112,9 @@
                  onclick="set(enabled,false);
                     set(view.maxpixelzoom,null);
                     set(view.fovmin,28);
-                    lookto(10.7, 3.5, 42);
+                    lookto(-20, 5, 0);
                     loadscene(scene_meeting_room, null, MERGE, BLEND(2));
-                    lookat(-94, 19, 97);
+                    lookat(0, 0, 0);
                     wait(LOAD);
                     oninterrupt(break);
                     wait(BLEND);
@@ -126,6 +125,76 @@
             <point ath="-20" atv="16" />
             <point ath="-23" atv="20" />
         </hotspot>
+    </scene>
+
+
+    <scene name="scene_meeting_room" title="meeting_room" onstart="" thumburl="image_tiles/room_title/room_f.jpg">
+        <plugin name="gyro" devices="html5" url="plugins/gyro.js" enabled="true" camroll="true" friction="0" velastic="0" onavailable="set(layer[gyrobutton].visible,true); set(layer[infotext].html,'Gyroscope available, press the gyro button to activate...');" onloaded="delayedcall(1,ifnot(available, showgyrowarning() ));"/>
+
+        <view hlookat="-47" vlookat="13" fovtype="MFOV" fov="100" maxpixelzoom="2.0" fovmin="60" fovmax="120" />
+
+        <preview url="image_tiles/room_title/room_f.jpg" />
+
+        <image>
+            <left  url="image_tiles/room_title/room_l.jpg" />
+            <front url="image_tiles/room_title/room_f.jpg" />
+            <right url="image_tiles/room_title/room_r.jpg" />
+            <back  url="image_tiles/room_title/room_b.jpg" />
+            <up    url="image_tiles/room_title/room_u.jpg" />
+            <down  url="image_tiles/room_title/room_d.jpg" />
+            <mobile>
+                <left  url="image_tiles/room_title/room_l.jpg" />
+                <front url="image_tiles/room_title/room_f.jpg" />
+                <right url="image_tiles/room_title/room_r.jpg" />
+                <back  url="image_tiles/room_title/room_b.jpg" />
+                <up    url="image_tiles/room_title/room_u.jpg" />
+                <down  url="image_tiles/room_title/room_d.jpg" />
+            </mobile>
+            <tablet>
+                <left  url="image_tiles/room_title/room_l.jpg" />
+                <front url="image_tiles/room_title/room_f.jpg" />
+                <right url="image_tiles/room_title/room_r.jpg" />
+                <back  url="image_tiles/room_title/room_b.jpg" />
+                <up    url="image_tiles/room_title/room_u.jpg" />
+                <down  url="image_tiles/room_title/room_d.jpg" />
+            </tablet>
+        </image>
+
+        <style name="pichotspot"
+               capture="false"
+               zorder="1"
+               alturl="hotspots/arrow_left.png"
+               altonloaded="if(isphone, set(scale,1.7));"
+               zoom="true"
+               scale="1.5"
+                />
+
+        <hotspot name="meeting_room" pic="meisterbrief" ath="-18" atv="10"
+                 style="pichotspot"
+                 capture="false"
+                 onover="set(hotspot[door].visible,true); tween(hotspot[door].alpha,1,0.4);"
+                 onout="if(enabled, tween(hotspot[door].alpha,0.0,0.4,default,set(hotspot[door].visible,false)) );"
+                 onhover="showtext('Office Hall',hotspottextstyle);"
+                 onclick="set(enabled,false);
+                    set(view.maxpixelzoom,null);
+                    set(view.fovmin,28);
+                    lookto(180, 0, 0);
+                    loadscene(scene_hall, null, MERGE, BLEND(2));
+                    lookat(180, 0, 0);
+                    wait(LOAD);
+                    oninterrupt(break);
+                    wait(BLEND);
+                    lookto(-352.7, -1.6, 108, smooth(45,45,60), false);
+                   ">
+            <point ath="120" atv="0.2" />
+            <point ath="140" atv="0.2" />
+            <point ath="140" atv="-2" />
+            <point ath="145" atv="2.5" />
+            <point ath="140.2" atv="7" />
+            <point ath="140" atv="4.8" />
+            <point ath="120" atv="4.8" />
+        </hotspot>
+
     </scene>
 
 
