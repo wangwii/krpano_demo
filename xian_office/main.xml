@@ -163,13 +163,13 @@
         <style name="pichotspot"
                capture="false"
                zorder="1"
-               alturl="hotspots/arrow_left.png"
+               alturl="hotspots/arrow_right.png"
                altonloaded="if(isphone, set(scale,1.7));"
                zoom="true"
                scale="1.5"
                 />
 
-        <hotspot name="meeting_room" pic="meisterbrief" ath="-18" atv="10"
+        <hotspot name="meeting_room" pic="meisterbrief" ath="130" atv="0"
                  style="pichotspot"
                  capture="false"
                  onover="set(hotspot[door].visible,true); tween(hotspot[door].alpha,1,0.4);"
