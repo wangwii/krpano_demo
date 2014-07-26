@@ -370,18 +370,21 @@
                  onclick="set(enabled,false);
                     set(view.maxpixelzoom,null);
                     set(view.fovmin,28);
-                    lookto(-20, 5, 0);
-                    loadscene(scene_meeting_room, null, MERGE, BLEND(2));
-                    lookat(0, 0, 0);
+                    lookto(-165, 5, 0);
+                    loadscene(scene_hall_near_door, null, MERGE, BLEND(2));
+                    lookat(-120, 0, 0);
                     wait(LOAD);
                     oninterrupt(break);
                     wait(BLEND);
                     lookto(-352.7, -1.6, 108, smooth(45,45,60), false);
                    ">
-            <point ath="-23" atv="-5" />
-            <point ath="-20" atv="-4" />
-            <point ath="-20" atv="16" />
-            <point ath="-23" atv="20" />
+            <point ath="-163" atv="10" />
+            <point ath="-162" atv="10" />
+            <point ath="-164" atv="8" />
+            <point ath="-166" atv="10" />
+            <point ath="-165" atv="10" />
+            <point ath="-163" atv="20" />
+            <point ath="-161" atv="20" />
         </hotspot>
     </scene>
 	<!-- end scene_hall_near_kitchen-->
