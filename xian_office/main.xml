@@ -200,7 +200,7 @@
                  capture="false"
                  onover="set(hotspot[door].visible,true); tween(hotspot[door].alpha,1,0.4);"
                  onout="if(enabled, tween(hotspot[door].alpha,0.0,0.4,default,set(hotspot[door].visible,false)) );"
-                 onhover="showtext('Office Hall',hotspottextstyle);"
+                 onhover="showtext('Office door',hotspottextstyle);"
                  onclick="set(enabled,false);
                     set(view.maxpixelzoom,null);
                     set(view.fovmin,28);
@@ -256,7 +256,7 @@
 
         <!-- polygonal hotspots for the pictures on the wall
             (for a HTML5 a zoomicon is used as alternative) -->
-        <!--style name="pichotspot"
+        <style name="pichotspot"
                capture="false"
                zorder="1"
                alturl="hotspots/arrow_left.png"
@@ -265,28 +265,58 @@
                scale="1.5"
                 />
 
-        <hotspot name="hs1" pic="meisterbrief" ath="-18" atv="10"
+        <hotspot name="to_kitchen" pic="meisterbrief" ath="-18" atv="10"
                  style="pichotspot"
                  capture="false"
                  onover="set(hotspot[door].visible,true); tween(hotspot[door].alpha,1,0.4);"
                  onout="if(enabled, tween(hotspot[door].alpha,0.0,0.4,default,set(hotspot[door].visible,false)) );"
-                 onhover="showtext('Meeting Room',hotspottextstyle);"
+                 onhover="showtext('Kitchen',hotspottextstyle);"
                  onclick="set(enabled,false);
                     set(view.maxpixelzoom,null);
                     set(view.fovmin,28);
-                    lookto(-20, 5, 0);
-                    loadscene(scene_meeting_room, null, MERGE, BLEND(2));
-                    lookat(0, 0, 0);
+                    lookto(60, 5, 0);
+                    loadscene(scene_hall_near_kitchen, null, MERGE, BLEND(2));
+                    lookat(20, 0, 0);
                     wait(LOAD);
                     oninterrupt(break);
                     wait(BLEND);
                     lookto(-352.7, -1.6, 108, smooth(45,45,60), false);
                    ">
-            <point ath="-23" atv="-5" />
-            <point ath="-20" atv="-4" />
-            <point ath="-20" atv="16" />
-            <point ath="-23" atv="20" />
-        </hotspot-->
+            <point ath="56" atv="10" />
+            <point ath="55" atv="10" />
+            <point ath="58" atv="8" />
+            <point ath="59" atv="10" />
+            <point ath="58" atv="10" />
+            <point ath="50" atv="20" />
+            <point ath="48" atv="20" />
+        </hotspot>
+
+		<!-- hotspot to west -->
+        <hotspot name="to_west" pic="meisterbrief" ath="-18" atv="10"
+                 style="pichotspot"
+                 capture="false"
+                 onover="set(hotspot[door].visible,true); tween(hotspot[door].alpha,1,0.4);"
+                 onout="if(enabled, tween(hotspot[door].alpha,0.0,0.4,default,set(hotspot[door].visible,false)) );"
+                 onhover="showtext('To West',hotspottextstyle);"
+                 onclick="set(enabled,false);
+                    set(view.maxpixelzoom,null);
+                    set(view.fovmin,28);
+                    lookto(-115, 5, 0);
+                    loadscene(scene_hall, null, MERGE, BLEND(2));
+                    lookat(-100, 0, 0);
+                    wait(LOAD);
+                    oninterrupt(break);
+                    wait(BLEND);
+                    lookto(-352.7, -1.6, 108, smooth(45,45,60), false);
+                   ">
+            <point ath="-113" atv="10" />
+            <point ath="-112" atv="10" />
+            <point ath="-114" atv="8" />
+            <point ath="-116" atv="10" />
+            <point ath="-115" atv="10" />
+            <point ath="-113" atv="20" />
+            <point ath="-111" atv="20" />
+        </hotspot>
     </scene>
 	<!-- end scene_hall_near_door -->
 
