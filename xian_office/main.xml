@@ -125,6 +125,32 @@
             <point ath="-20" atv="16" />
             <point ath="-23" atv="20" />
         </hotspot>
+
+        <hotspot name="to_door" pic="meisterbrief" ath="-18" atv="10"
+                 style="pichotspot"
+                 capture="false"
+                 onover="set(hotspot[door].visible,true); tween(hotspot[door].alpha,1,0.4);"
+                 onout="if(enabled, tween(hotspot[door].alpha,0.0,0.4,default,set(hotspot[door].visible,false)) );"
+                 onhover="showtext('Meeting Room',hotspottextstyle);"
+                 onclick="set(enabled,false);
+                    set(view.maxpixelzoom,null);
+                    set(view.fovmin,28);
+                    lookto(80, 5, 0);
+                    loadscene(scene_hall_near_door, null, MERGE, BLEND(2));
+                    lookat(70, 0, 0);
+                    wait(LOAD);
+                    oninterrupt(break);
+                    wait(BLEND);
+                    lookto(-352.7, -1.6, 108, smooth(45,45,60), false);
+                   ">
+            <point ath="70" atv="20" />
+            <point ath="68" atv="20" />
+            <point ath="73" atv="18" />
+            <point ath="72" atv="20.6" />
+            <point ath="71" atv="20.5" />
+            <point ath="62" atv="30" />
+            <point ath="60" atv="30" />
+        </hotspot>
     </scene>
 
 
@@ -196,11 +222,207 @@
         </hotspot>
 
     </scene>
+	<!-- end scene_meeting_room -->
 
+	<scene name="scene_hall_near_door" title="xian_office" onstart="" thumburl="image_tiles/near_door/nd_f.png">
+        <plugin name="gyro" devices="html5" url="plugins/gyro.js" enabled="true" camroll="true" friction="0" velastic="0" onavailable="set(layer[gyrobutton].visible,true); set(layer[infotext].html,'Gyroscope available, press the gyro button to activate...');" onloaded="delayedcall(1,ifnot(available, showgyrowarning() ));"/>
+        <view hlookat="80" vlookat="10" fovtype="MFOV" fov="100" maxpixelzoom="2.0" fovmin="60" fovmax="120" />
+		<preview url="image_tiles/near_door/nd_f.png" />
+
+        <image>
+            <left  url="image_tiles/near_door/nd_b.png" />
+            <front url="image_tiles/near_door/nd_l.png" />
+            <right url="image_tiles/near_door/nd_f.png" />
+            <back  url="image_tiles/near_door/nd_r.png" />
+            <up    url="image_tiles/near_door/nd_u.png" />
+            <down  url="image_tiles/near_door/nd_d.png" />
+            <mobile>
+				<left  url="image_tiles/near_door/nd_b.png" />
+            	<front url="image_tiles/near_door/nd_l.png" />
+            	<right url="image_tiles/near_door/nd_f.png" />
+            	<back  url="image_tiles/near_door/nd_r.png" />
+            	<up    url="image_tiles/near_door/nd_u.png" />
+				<down  url="image_tiles/near_door/nd_d.png" />
+            </mobile>
+            <tablet>
+				<left  url="image_tiles/near_door/nd_b.png" />
+            	<front url="image_tiles/near_door/nd_l.png" />
+            	<right url="image_tiles/near_door/nd_f.png" />
+            	<back  url="image_tiles/near_door/nd_r.png" />
+            	<up    url="image_tiles/near_door/nd_u.png" />
+            	<down  url="image_tiles/near_door/nd_d.png" />
+            </tablet>
+        </image>
+
+        <!-- polygonal hotspots for the pictures on the wall
+            (for a HTML5 a zoomicon is used as alternative) -->
+        <!--style name="pichotspot"
+               capture="false"
+               zorder="1"
+               alturl="hotspots/arrow_left.png"
+               altonloaded="if(isphone, set(scale,1.7));"
+               zoom="true"
+               scale="1.5"
+                />
+
+        <hotspot name="hs1" pic="meisterbrief" ath="-18" atv="10"
+                 style="pichotspot"
+                 capture="false"
+                 onover="set(hotspot[door].visible,true); tween(hotspot[door].alpha,1,0.4);"
+                 onout="if(enabled, tween(hotspot[door].alpha,0.0,0.4,default,set(hotspot[door].visible,false)) );"
+                 onhover="showtext('Meeting Room',hotspottextstyle);"
+                 onclick="set(enabled,false);
+                    set(view.maxpixelzoom,null);
+                    set(view.fovmin,28);
+                    lookto(-20, 5, 0);
+                    loadscene(scene_meeting_room, null, MERGE, BLEND(2));
+                    lookat(0, 0, 0);
+                    wait(LOAD);
+                    oninterrupt(break);
+                    wait(BLEND);
+                    lookto(-352.7, -1.6, 108, smooth(45,45,60), false);
+                   ">
+            <point ath="-23" atv="-5" />
+            <point ath="-20" atv="-4" />
+            <point ath="-20" atv="16" />
+            <point ath="-23" atv="20" />
+        </hotspot-->
+    </scene>
+	<!-- end scene_hall_near_door -->
+
+    <scene name="scene_hall_near_kitchen" title="xian_office" onstart="" thumburl="image_tiles/near_kitchen/nk_f.png">
+        <plugin name="gyro" devices="html5" url="plugins/gyro.js" enabled="true" camroll="true" friction="0" velastic="0" onavailable="set(layer[gyrobutton].visible,true); set(layer[infotext].html,'Gyroscope available, press the gyro button to activate...');" onloaded="delayedcall(1,ifnot(available, showgyrowarning() ));"/>
+        <view hlookat="30" vlookat="10" fovtype="MFOV" fov="100" maxpixelzoom="2.0" fovmin="60" fovmax="120" />
+		<preview url="image_tiles/near_kitchen/nk_f.png" />
+
+        <image>
+			<left  url="image_tiles/near_kitchen/nk_l.png" />
+            <front url="image_tiles/near_kitchen/nk_f.png" />
+            <right url="image_tiles/near_kitchen/nk_r.png" />
+            <back  url="image_tiles/near_kitchen/nk_b.png" />
+            <up    url="image_tiles/near_kitchen/nk_u.png" />
+            <down  url="image_tiles/near_kitchen/nk_d.png" />
+            <mobile>
+				<left  url="image_tiles/near_kitchen/nk_l.png" />
+            	<front url="image_tiles/near_kitchen/nk_f.png" />
+            	<right url="image_tiles/near_kitchen/nk_r.png" />
+            	<back  url="image_tiles/near_kitchen/nk_b.png" />
+            	<up    url="image_tiles/near_kitchen/nk_u.png" />
+            	<down  url="image_tiles/near_kitchen/nk_d.png" />
+            </mobile>
+            <tablet>
+				<left  url="image_tiles/near_kitchen/nk_l.png" />
+            	<front url="image_tiles/near_kitchen/nk_f.png" />
+            	<right url="image_tiles/near_kitchen/nk_r.png" />
+            	<back  url="image_tiles/near_kitchen/nk_b.png" />
+            	<up    url="image_tiles/near_kitchen/nk_u.png" />
+            	<down  url="image_tiles/near_kitchen/nk_d.png" />
+            </tablet>
+        </image>
+
+        <!-- polygonal hotspots for the pictures on the wall
+            (for a HTML5 a zoomicon is used as alternative) -->
+        <style name="pichotspot"
+               capture="false"
+               zorder="1"
+               alturl="hotspots/arrow_left.png"
+               altonloaded="if(isphone, set(scale,1.7));"
+               zoom="true"
+               scale="1.5"
+                />
+
+        <hotspot name="hs1" pic="meisterbrief" ath="-18" atv="10"
+                 style="pichotspot"
+                 capture="false"
+                 onover="set(hotspot[door].visible,true); tween(hotspot[door].alpha,1,0.4);"
+                 onout="if(enabled, tween(hotspot[door].alpha,0.0,0.4,default,set(hotspot[door].visible,false)) );"
+                 onhover="showtext('Meeting Room',hotspottextstyle);"
+                 onclick="set(enabled,false);
+                    set(view.maxpixelzoom,null);
+                    set(view.fovmin,28);
+                    lookto(-20, 5, 0);
+                    loadscene(scene_meeting_room, null, MERGE, BLEND(2));
+                    lookat(0, 0, 0);
+                    wait(LOAD);
+                    oninterrupt(break);
+                    wait(BLEND);
+                    lookto(-352.7, -1.6, 108, smooth(45,45,60), false);
+                   ">
+            <point ath="-23" atv="-5" />
+            <point ath="-20" atv="-4" />
+            <point ath="-20" atv="16" />
+            <point ath="-23" atv="20" />
+        </hotspot>
+    </scene>
+	<!-- end scene_hall_near_kitchen-->
+
+    <scene name="scene_hall_kitchen" title="xian_office" onstart="" thumburl="image_tiles/hall_tiles/left.jpg">
+        <plugin name="gyro" devices="html5" url="plugins/gyro.js" enabled="true" camroll="true" friction="0" velastic="0" onavailable="set(layer[gyrobutton].visible,true); set(layer[infotext].html,'Gyroscope available, press the gyro button to activate...');" onloaded="delayedcall(1,ifnot(available, showgyrowarning() ));"/>
+        <view hlookat="80" vlookat="10" fovtype="MFOV" fov="100" maxpixelzoom="2.0" fovmin="60" fovmax="120" />
+        <preview url="image_tiles/hall_tiles/left.jpg" />
+
+        <image>
+            <left  url="image_tiles/hall_tiles/left.jpg" />
+            <front url="image_tiles/hall_tiles/front.jpg" />
+            <right url="image_tiles/hall_tiles/right.jpg" />
+            <back  url="image_tiles/hall_tiles/back.jpg" />
+            <up    url="image_tiles/hall_tiles/up.jpg" />
+            <down  url="image_tiles/hall_tiles/down.jpg" />
+            <mobile>
+                <left  url="image_tiles/hall_tiles/left.jpg" />
+                <front url="image_tiles/hall_tiles/front.jpg" />
+                <right url="image_tiles/hall_tiles/right.jpg" />
+                <back  url="image_tiles/hall_tiles/back.jpg" />
+                <up    url="image_tiles/hall_tiles/up.jpg" />
+                <down  url="image_tiles/hall_tiles/down.jpg" />
+            </mobile>
+            <tablet>
+                <left  url="image_tiles/hall_tiles/left.jpg" />
+                <front url="image_tiles/hall_tiles/front.jpg" />
+                <right url="image_tiles/hall_tiles/right.jpg" />
+                <back  url="image_tiles/hall_tiles/back.jpg" />
+                <up    url="image_tiles/hall_tiles/up.jpg" />
+                <down  url="image_tiles/hall_tiles/down.jpg" />
+            </tablet>
+        </image>
+
+        <!-- polygonal hotspots for the pictures on the wall
+            (for a HTML5 a zoomicon is used as alternative) -->
+        <style name="pichotspot"
+               capture="false"
+               zorder="1"
+               alturl="hotspots/arrow_left.png"
+               altonloaded="if(isphone, set(scale,1.7));"
+               zoom="true"
+               scale="1.5"
+                />
+
+        <hotspot name="hs1" pic="meisterbrief" ath="-18" atv="10"
+                 style="pichotspot"
+                 capture="false"
+                 onover="set(hotspot[door].visible,true); tween(hotspot[door].alpha,1,0.4);"
+                 onout="if(enabled, tween(hotspot[door].alpha,0.0,0.4,default,set(hotspot[door].visible,false)) );"
+                 onhover="showtext('Meeting Room',hotspottextstyle);"
+                 onclick="set(enabled,false);
+                    set(view.maxpixelzoom,null);
+                    set(view.fovmin,28);
+                    lookto(-20, 5, 0);
+                    loadscene(scene_meeting_room, null, MERGE, BLEND(2));
+                    lookat(0, 0, 0);
+                    wait(LOAD);
+                    oninterrupt(break);
+                    wait(BLEND);
+                    lookto(-352.7, -1.6, 108, smooth(45,45,60), false);
+                   ">
+            <point ath="-23" atv="-5" />
+            <point ath="-20" atv="-4" />
+            <point ath="-20" atv="16" />
+            <point ath="-23" atv="20" />
+        </hotspot>
+    </scene>
+	<!-- end scene_hall_kitchen-->
 
     <!-- actions -->
-
-
     <!-- calc the max. flyout size of a hotspot for the current screen size -->
     <action name="calc_flyout_size">
         div(screen_sideaspect, stagewidth, stageheight);
