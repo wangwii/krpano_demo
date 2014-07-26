@@ -391,31 +391,31 @@
 
     <scene name="scene_hall_kitchen" title="xian_office" onstart="" thumburl="image_tiles/hall_tiles/left.jpg">
         <plugin name="gyro" devices="html5" url="plugins/gyro.js" enabled="true" camroll="true" friction="0" velastic="0" onavailable="set(layer[gyrobutton].visible,true); set(layer[infotext].html,'Gyroscope available, press the gyro button to activate...');" onloaded="delayedcall(1,ifnot(available, showgyrowarning() ));"/>
-        <view hlookat="80" vlookat="10" fovtype="MFOV" fov="100" maxpixelzoom="2.0" fovmin="60" fovmax="120" />
+        <view hlookat="0" vlookat="10" fovtype="MFOV" fov="100" maxpixelzoom="2.0" fovmin="60" fovmax="120" />
         <preview url="image_tiles/hall_tiles/left.jpg" />
 
         <image>
-            <left  url="image_tiles/hall_tiles/left.jpg" />
-            <front url="image_tiles/hall_tiles/front.jpg" />
-            <right url="image_tiles/hall_tiles/right.jpg" />
-            <back  url="image_tiles/hall_tiles/back.jpg" />
-            <up    url="image_tiles/hall_tiles/up.jpg" />
-            <down  url="image_tiles/hall_tiles/down.jpg" />
+            <left  url="image_tiles/kitchen/k_l.png" />
+            <front url="image_tiles/kitchen/k_f.png" />
+            <right url="image_tiles/kitchen/k_r.png" />
+            <back  url="image_tiles/kitchen/k_b.png" />
+            <up    url="image_tiles/kitchen/k_u.png" />
+            <down  url="image_tiles/kitchen/k_d.png" />
             <mobile>
-                <left  url="image_tiles/hall_tiles/left.jpg" />
-                <front url="image_tiles/hall_tiles/front.jpg" />
-                <right url="image_tiles/hall_tiles/right.jpg" />
-                <back  url="image_tiles/hall_tiles/back.jpg" />
-                <up    url="image_tiles/hall_tiles/up.jpg" />
-                <down  url="image_tiles/hall_tiles/down.jpg" />
+				<left  url="image_tiles/kitchen/k_l.png" />
+            	<front url="image_tiles/kitchen/k_f.png" />
+            	<right url="image_tiles/kitchen/k_r.png" />
+            	<back  url="image_tiles/kitchen/k_b.png" />
+            	<up    url="image_tiles/kitchen/k_u.png" />
+            	<down  url="image_tiles/kitchen/k_d.png" />
             </mobile>
             <tablet>
-                <left  url="image_tiles/hall_tiles/left.jpg" />
-                <front url="image_tiles/hall_tiles/front.jpg" />
-                <right url="image_tiles/hall_tiles/right.jpg" />
-                <back  url="image_tiles/hall_tiles/back.jpg" />
-                <up    url="image_tiles/hall_tiles/up.jpg" />
-                <down  url="image_tiles/hall_tiles/down.jpg" />
+				<left  url="image_tiles/kitchen/k_l.png" />
+            	<front url="image_tiles/kitchen/k_f.png" />
+            	<right url="image_tiles/kitchen/k_r.png" />
+            	<back  url="image_tiles/kitchen/k_b.png" />
+            	<up    url="image_tiles/kitchen/k_u.png" />
+            	<down  url="image_tiles/kitchen/k_d.png" />
             </tablet>
         </image>
 
@@ -435,22 +435,25 @@
                  capture="false"
                  onover="set(hotspot[door].visible,true); tween(hotspot[door].alpha,1,0.4);"
                  onout="if(enabled, tween(hotspot[door].alpha,0.0,0.4,default,set(hotspot[door].visible,false)) );"
-                 onhover="showtext('Meeting Room',hotspottextstyle);"
+                 onhover="showtext('Outside',hotspottextstyle);"
                  onclick="set(enabled,false);
                     set(view.maxpixelzoom,null);
                     set(view.fovmin,28);
-                    lookto(-20, 5, 0);
-                    loadscene(scene_meeting_room, null, MERGE, BLEND(2));
-                    lookat(0, 0, 0);
+                    lookto(-150, 5, 0);
+                    loadscene(scene_hall_near_kitchen, null, MERGE, BLEND(2));
+                    lookat(100, 0, 0);
                     wait(LOAD);
                     oninterrupt(break);
                     wait(BLEND);
                     lookto(-352.7, -1.6, 108, smooth(45,45,60), false);
                    ">
-            <point ath="-23" atv="-5" />
-            <point ath="-20" atv="-4" />
-            <point ath="-20" atv="16" />
-            <point ath="-23" atv="20" />
+            <point ath="-153" atv="25" />
+            <point ath="-154" atv="25" />
+            <point ath="-151" atv="23" />
+            <point ath="-149" atv="25" />
+            <point ath="-150" atv="25" />
+            <point ath="-152" atv="35" />
+            <point ath="-155" atv="35" />
         </hotspot>
     </scene>
 	<!-- end scene_hall_kitchen-->
