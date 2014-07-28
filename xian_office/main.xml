@@ -363,14 +363,14 @@
         <style name="pichotspot"
                capture="false"
                zorder="1"
-               alturl="hotspots/arrow_left.png"
+               alturl="hotspots/arrow_up.png"
                altonloaded="if(isphone, set(scale,1.7));"
                zoom="true"
                scale="1.5"
                 />
 
-        <hotspot name="todoor" pic="meisterbrief" ath="-18" atv="10"
-                 style="pichotspot"
+        <hotspot name="todoor" pic="meisterbrief" ath="-162" atv="15"
+                 style="pichotspot_up"
                  capture="false"
                  onover="set(hotspot[door].visible,true); tween(hotspot[door].alpha,1,0.4);"
                  onout="if(enabled, tween(hotspot[door].alpha,0.0,0.4,default,set(hotspot[door].visible,false)) );"
@@ -395,8 +395,8 @@
             <point ath="-161" atv="20" />
         </hotspot>
 
-        <hotspot name="tokitchen" pic="meisterbrief" ath="-18" atv="10"
-                 style="pichotspot"
+        <hotspot name="tokitchen" pic="meisterbrief" ath="-65" atv="15"
+                 style="pichotspot_up"
                  capture="false"
                  onover="set(hotspot[door].visible,true); tween(hotspot[door].alpha,1,0.4);"
                  onout="if(enabled, tween(hotspot[door].alpha,0.0,0.4,default,set(hotspot[door].visible,false)) );"
@@ -455,17 +455,17 @@
 
         <!-- polygonal hotspots for the pictures on the wall
             (for a HTML5 a zoomicon is used as alternative) -->
-        <style name="pichotspot"
+        <style name="pichotspot_up"
                capture="false"
                zorder="1"
-               alturl="hotspots/arrow_left.png"
+               alturl="hotspots/arrow_up.png"
                altonloaded="if(isphone, set(scale,1.7));"
                zoom="true"
                scale="1.5"
                 />
 
-        <hotspot name="hs1" pic="meisterbrief" ath="-18" atv="10"
-                 style="pichotspot"
+        <hotspot name="hs1" pic="meisterbrief" ath="-150" atv="30"
+                 style="pichotspot_up"
                  capture="false"
                  onover="set(hotspot[door].visible,true); tween(hotspot[door].alpha,1,0.4);"
                  onout="if(enabled, tween(hotspot[door].alpha,0.0,0.4,default,set(hotspot[door].visible,false)) );"
