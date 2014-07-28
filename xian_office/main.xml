@@ -246,20 +246,20 @@
             <up    url="image_tiles/near_door/nd_u.png" />
             <down  url="image_tiles/near_door/nd_d.png" />
             <mobile>
-              <left  url="image_tiles/near_door/nd_b.png" />
-              <front url="image_tiles/near_door/nd_l.png" />
-              <right url="image_tiles/near_door/nd_f.png" />
-              <back  url="image_tiles/near_door/nd_r.png" />
-              <up    url="image_tiles/near_door/nd_u.png" />
-              <down  url="image_tiles/near_door/nd_d.png" />
+                <left  url="image_tiles/near_door/nd_b.png" />
+                <front url="image_tiles/near_door/nd_l.png" />
+                <right url="image_tiles/near_door/nd_f.png" />
+                <back  url="image_tiles/near_door/nd_r.png" />
+                <up    url="image_tiles/near_door/nd_u.png" />
+                <down  url="image_tiles/near_door/nd_d.png" />
             </mobile>
             <tablet>
-              <left  url="image_tiles/near_door/nd_b.png" />
-            	<front url="image_tiles/near_door/nd_l.png" />
-            	<right url="image_tiles/near_door/nd_f.png" />
-            	<back  url="image_tiles/near_door/nd_r.png" />
-            	<up    url="image_tiles/near_door/nd_u.png" />
-            	<down  url="image_tiles/near_door/nd_d.png" />
+                <left  url="image_tiles/near_door/nd_b.png" />
+                <front url="image_tiles/near_door/nd_l.png" />
+                <right url="image_tiles/near_door/nd_f.png" />
+                <back  url="image_tiles/near_door/nd_r.png" />
+                <up    url="image_tiles/near_door/nd_u.png" />
+                <down  url="image_tiles/near_door/nd_d.png" />
             </tablet>
         </image>
 
@@ -341,20 +341,20 @@
             <up    url="image_tiles/near_kitchen/nk_u.png" />
             <down  url="image_tiles/near_kitchen/nk_d.png" />
             <mobile>
-              <left  url="image_tiles/near_kitchen/nk_l.png" />
-            	<front url="image_tiles/near_kitchen/nk_f.png" />
-            	<right url="image_tiles/near_kitchen/nk_r.png" />
-            	<back  url="image_tiles/near_kitchen/nk_b.png" />
-            	<up    url="image_tiles/near_kitchen/nk_u.png" />
-            	<down  url="image_tiles/near_kitchen/nk_d.png" />
+                <left  url="image_tiles/near_kitchen/nk_l.png" />
+                <front url="image_tiles/near_kitchen/nk_f.png" />
+                <right url="image_tiles/near_kitchen/nk_r.png" />
+                <back  url="image_tiles/near_kitchen/nk_b.png" />
+                <up    url="image_tiles/near_kitchen/nk_u.png" />
+                <down  url="image_tiles/near_kitchen/nk_d.png" />
             </mobile>
             <tablet>
-              <left  url="image_tiles/near_kitchen/nk_l.png" />
-            	<front url="image_tiles/near_kitchen/nk_f.png" />
-            	<right url="image_tiles/near_kitchen/nk_r.png" />
-            	<back  url="image_tiles/near_kitchen/nk_b.png" />
-            	<up    url="image_tiles/near_kitchen/nk_u.png" />
-            	<down  url="image_tiles/near_kitchen/nk_d.png" />
+                <left  url="image_tiles/near_kitchen/nk_l.png" />
+                <front url="image_tiles/near_kitchen/nk_f.png" />
+                <right url="image_tiles/near_kitchen/nk_r.png" />
+                <back  url="image_tiles/near_kitchen/nk_b.png" />
+                <up    url="image_tiles/near_kitchen/nk_u.png" />
+                <down  url="image_tiles/near_kitchen/nk_d.png" />
             </tablet>
         </image>
 
@@ -436,20 +436,20 @@
             <up    url="image_tiles/kitchen/k_u.png" />
             <down  url="image_tiles/kitchen/k_d.png" />
             <mobile>
-              <left  url="image_tiles/kitchen/k_l.png" />
-            	<front url="image_tiles/kitchen/k_f.png" />
-            	<right url="image_tiles/kitchen/k_r.png" />
-            	<back  url="image_tiles/kitchen/k_b.png" />
-            	<up    url="image_tiles/kitchen/k_u.png" />
-            	<down  url="image_tiles/kitchen/k_d.png" />
+                <left  url="image_tiles/kitchen/k_l.png" />
+                <front url="image_tiles/kitchen/k_f.png" />
+                <right url="image_tiles/kitchen/k_r.png" />
+                <back  url="image_tiles/kitchen/k_b.png" />
+                <up    url="image_tiles/kitchen/k_u.png" />
+                <down  url="image_tiles/kitchen/k_d.png" />
             </mobile>
             <tablet>
-              <left  url="image_tiles/kitchen/k_l.png" />
-            	<front url="image_tiles/kitchen/k_f.png" />
-            	<right url="image_tiles/kitchen/k_r.png" />
-            	<back  url="image_tiles/kitchen/k_b.png" />
-            	<up    url="image_tiles/kitchen/k_u.png" />
-            	<down  url="image_tiles/kitchen/k_d.png" />
+                <left  url="image_tiles/kitchen/k_l.png" />
+                <front url="image_tiles/kitchen/k_f.png" />
+                <right url="image_tiles/kitchen/k_r.png" />
+                <back  url="image_tiles/kitchen/k_b.png" />
+                <up    url="image_tiles/kitchen/k_u.png" />
+                <down  url="image_tiles/kitchen/k_d.png" />
             </tablet>
         </image>
 
