@@ -195,7 +195,7 @@
             </tablet>
         </image>
 
-        <style name="pichotspot"
+        <style name="pichotspot_right"
                capture="false"
                zorder="1"
                alturl="hotspots/arrow_right.png"
@@ -205,7 +205,7 @@
                 />
 
         <hotspot name="meeting_room" pic="meisterbrief" ath="130" atv="0"
-                 style="pichotspot"
+                 style="pichotspot_right"
                  capture="false"
                  onover="set(hotspot[door].visible,true); tween(hotspot[door].alpha,1,0.4);"
                  onout="if(enabled, tween(hotspot[door].alpha,0.0,0.4,default,set(hotspot[door].visible,false)) );"
@@ -246,15 +246,15 @@
             <up    url="image_tiles/near_door/nd_u.png" />
             <down  url="image_tiles/near_door/nd_d.png" />
             <mobile>
-				<left  url="image_tiles/near_door/nd_b.png" />
-            	<front url="image_tiles/near_door/nd_l.png" />
-            	<right url="image_tiles/near_door/nd_f.png" />
-            	<back  url="image_tiles/near_door/nd_r.png" />
-            	<up    url="image_tiles/near_door/nd_u.png" />
-				<down  url="image_tiles/near_door/nd_d.png" />
+              <left  url="image_tiles/near_door/nd_b.png" />
+              <front url="image_tiles/near_door/nd_l.png" />
+              <right url="image_tiles/near_door/nd_f.png" />
+              <back  url="image_tiles/near_door/nd_r.png" />
+              <up    url="image_tiles/near_door/nd_u.png" />
+              <down  url="image_tiles/near_door/nd_d.png" />
             </mobile>
             <tablet>
-				<left  url="image_tiles/near_door/nd_b.png" />
+              <left  url="image_tiles/near_door/nd_b.png" />
             	<front url="image_tiles/near_door/nd_l.png" />
             	<right url="image_tiles/near_door/nd_f.png" />
             	<back  url="image_tiles/near_door/nd_r.png" />
@@ -341,7 +341,7 @@
             <up    url="image_tiles/near_kitchen/nk_u.png" />
             <down  url="image_tiles/near_kitchen/nk_d.png" />
             <mobile>
-				<left  url="image_tiles/near_kitchen/nk_l.png" />
+              <left  url="image_tiles/near_kitchen/nk_l.png" />
             	<front url="image_tiles/near_kitchen/nk_f.png" />
             	<right url="image_tiles/near_kitchen/nk_r.png" />
             	<back  url="image_tiles/near_kitchen/nk_b.png" />
@@ -349,7 +349,7 @@
             	<down  url="image_tiles/near_kitchen/nk_d.png" />
             </mobile>
             <tablet>
-				<left  url="image_tiles/near_kitchen/nk_l.png" />
+              <left  url="image_tiles/near_kitchen/nk_l.png" />
             	<front url="image_tiles/near_kitchen/nk_f.png" />
             	<right url="image_tiles/near_kitchen/nk_r.png" />
             	<back  url="image_tiles/near_kitchen/nk_b.png" />
@@ -436,7 +436,7 @@
             <up    url="image_tiles/kitchen/k_u.png" />
             <down  url="image_tiles/kitchen/k_d.png" />
             <mobile>
-				<left  url="image_tiles/kitchen/k_l.png" />
+              <left  url="image_tiles/kitchen/k_l.png" />
             	<front url="image_tiles/kitchen/k_f.png" />
             	<right url="image_tiles/kitchen/k_r.png" />
             	<back  url="image_tiles/kitchen/k_b.png" />
@@ -444,7 +444,7 @@
             	<down  url="image_tiles/kitchen/k_d.png" />
             </mobile>
             <tablet>
-				<left  url="image_tiles/kitchen/k_l.png" />
+              <left  url="image_tiles/kitchen/k_l.png" />
             	<front url="image_tiles/kitchen/k_f.png" />
             	<right url="image_tiles/kitchen/k_r.png" />
             	<back  url="image_tiles/kitchen/k_b.png" />
