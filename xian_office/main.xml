@@ -94,7 +94,7 @@
 
         <!-- polygonal hotspots for the pictures on the wall
             (for a HTML5 a zoomicon is used as alternative) -->
-        <style name="pichotspot"
+        <style name="pichotspot_left"
                capture="false"
                zorder="1"
                alturl="hotspots/arrow_left.png"
@@ -103,8 +103,17 @@
                scale="1.5"
                 />
 
-        <hotspot name="hs1" pic="meisterbrief" ath="-18" atv="10"
-                 style="pichotspot"
+        <style name="pichotspot_up"
+               capture="false"
+               zorder="1"
+               alturl="hotspots/arrow_up.png"
+               altonloaded="if(isphone, set(scale,1.7));"
+               zoom="true"
+               scale="1.5"
+                />
+
+        <hotspot name="to_meeting_room" pic="meisterbrief" ath="-18" atv="10"
+                 style="pichotspot_left"
                  capture="false"
                  onover="set(hotspot[door].visible,true); tween(hotspot[door].alpha,1,0.4);"
                  onout="if(enabled, tween(hotspot[door].alpha,0.0,0.4,default,set(hotspot[door].visible,false)) );"
@@ -126,8 +135,8 @@
             <point ath="-23" atv="20" />
         </hotspot>
 
-        <hotspot name="to_door" pic="meisterbrief" ath="-18" atv="10"
-                 style="pichotspot"
+        <hotspot name="to_door" pic="meisterbrief" ath="72" atv="17"
+                 style="pichotspot_up"
                  capture="false"
                  onover="set(hotspot[door].visible,true); tween(hotspot[door].alpha,1,0.4);"
                  onout="if(enabled, tween(hotspot[door].alpha,0.0,0.4,default,set(hotspot[door].visible,false)) );"
@@ -256,17 +265,16 @@
 
         <!-- polygonal hotspots for the pictures on the wall
             (for a HTML5 a zoomicon is used as alternative) -->
-        <style name="pichotspot"
+        <style name="pichotspot_up"
                capture="false"
                zorder="1"
-               alturl="hotspots/arrow_left.png"
+               alturl="hotspots/arrow_up.png"
                altonloaded="if(isphone, set(scale,1.7));"
                zoom="true"
                scale="1.5"
                 />
-
-        <hotspot name="to_kitchen" pic="meisterbrief" ath="-18" atv="10"
-                 style="pichotspot"
+        <hotspot name="to_kitchen" pic="meisterbrief" ath="55" atv="20"
+                 style="pichotspot_up"
                  capture="false"
                  onover="set(hotspot[door].visible,true); tween(hotspot[door].alpha,1,0.4);"
                  onout="if(enabled, tween(hotspot[door].alpha,0.0,0.4,default,set(hotspot[door].visible,false)) );"
@@ -292,8 +300,8 @@
         </hotspot>
 
 		<!-- hotspot to west -->
-        <hotspot name="to_west" pic="meisterbrief" ath="-18" atv="10"
-                 style="pichotspot"
+        <hotspot name="to_west" pic="meisterbrief" ath="-112" atv="15"
+                 style="pichotspot_up"
                  capture="false"
                  onover="set(hotspot[door].visible,true); tween(hotspot[door].alpha,1,0.4);"
                  onout="if(enabled, tween(hotspot[door].alpha,0.0,0.4,default,set(hotspot[door].visible,false)) );"
@@ -361,7 +369,7 @@
                scale="1.5"
                 />
 
-        <hotspot name="hs1" pic="meisterbrief" ath="-18" atv="10"
+        <hotspot name="todoor" pic="meisterbrief" ath="-18" atv="10"
                  style="pichotspot"
                  capture="false"
                  onover="set(hotspot[door].visible,true); tween(hotspot[door].alpha,1,0.4);"
@@ -386,13 +394,39 @@
             <point ath="-163" atv="20" />
             <point ath="-161" atv="20" />
         </hotspot>
+
+        <hotspot name="tokitchen" pic="meisterbrief" ath="-18" atv="10"
+                 style="pichotspot"
+                 capture="false"
+                 onover="set(hotspot[door].visible,true); tween(hotspot[door].alpha,1,0.4);"
+                 onout="if(enabled, tween(hotspot[door].alpha,0.0,0.4,default,set(hotspot[door].visible,false)) );"
+                 onhover="showtext('To Kitchen',hotspottextstyle);"
+                 onclick="set(enabled,false);
+                    set(view.maxpixelzoom,null);
+                    set(view.fovmin,28);
+                    lookto(-60, 0, 0);
+                    loadscene(scene_hall_kitchen, null, MERGE, BLEND(2));
+                    lookat(-60, 0, 0);
+                    wait(LOAD);
+                    oninterrupt(break);
+                    wait(BLEND);
+                    lookto(-352.7, -1.6, 108, smooth(45,45,60), false);
+                   ">
+            <point ath="-67" atv="10" />
+            <point ath="-69" atv="10" />
+            <point ath="-65.5" atv="8" />
+            <point ath="-62" atv="10" />
+            <point ath="-64" atv="10" />
+            <point ath="-64" atv="20" />
+            <point ath="-67" atv="20" />
+        </hotspot>
     </scene>
 	<!-- end scene_hall_near_kitchen-->
 
-    <scene name="scene_hall_kitchen" title="xian_office" onstart="" thumburl="image_tiles/hall_tiles/left.jpg">
+    <scene name="scene_hall_kitchen" title="xian_office" onstart="" thumburl="image_tiles/kitchen/k_l.png">
         <plugin name="gyro" devices="html5" url="plugins/gyro.js" enabled="true" camroll="true" friction="0" velastic="0" onavailable="set(layer[gyrobutton].visible,true); set(layer[infotext].html,'Gyroscope available, press the gyro button to activate...');" onloaded="delayedcall(1,ifnot(available, showgyrowarning() ));"/>
         <view hlookat="0" vlookat="10" fovtype="MFOV" fov="100" maxpixelzoom="2.0" fovmin="60" fovmax="120" />
-        <preview url="image_tiles/hall_tiles/left.jpg" />
+        <preview url="image_tiles/kitchen/k_l.png" />
 
         <image>
             <left  url="image_tiles/kitchen/k_l.png" />
