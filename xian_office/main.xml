@@ -140,7 +140,7 @@
                  capture="false"
                  onover="set(hotspot[door].visible,true); tween(hotspot[door].alpha,1,0.4);"
                  onout="if(enabled, tween(hotspot[door].alpha,0.0,0.4,default,set(hotspot[door].visible,false)) );"
-                 onhover="showtext('Meeting Room',hotspottextstyle);"
+                 onhover="showtext('To East',hotspottextstyle);"
                  onclick="set(enabled,false);
                     set(view.maxpixelzoom,null);
                     set(view.fovmin,28);
@@ -374,7 +374,7 @@
                  capture="false"
                  onover="set(hotspot[door].visible,true); tween(hotspot[door].alpha,1,0.4);"
                  onout="if(enabled, tween(hotspot[door].alpha,0.0,0.4,default,set(hotspot[door].visible,false)) );"
-                 onhover="showtext('Meeting Room',hotspottextstyle);"
+                 onhover="showtext('To Door',hotspottextstyle);"
                  onclick="set(enabled,false);
                     set(view.maxpixelzoom,null);
                     set(view.fovmin,28);
